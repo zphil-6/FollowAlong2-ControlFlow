@@ -22,7 +22,8 @@ public class Challenge {
     //   canCharge(20, false)  → false   not docked
     //   canCharge(0, true)    → true
     public static boolean canCharge(int battery, boolean docked) {
-        return false;   // YOUR CODE — use an if statement
+        // YOUR CODE — use an if statement
+        return docked && battery < 100;
     }
 
     // Problem 2 — dayType
@@ -36,6 +37,10 @@ public class Challenge {
     //   dayType(0)  → "invalid"
     //   dayType(9)  → "invalid"
     public static String dayType(int day) {
-        return "";   // YOUR CODE — use a switch
+        return switch (day) {
+            case 1, 2, 3, 4, 5 -> "weekday";
+            case 6, 7 -> "weekend";
+            default -> "invalid";
+        };   // YOUR CODE — use a switch
     }
 }
